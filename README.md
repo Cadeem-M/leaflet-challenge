@@ -59,7 +59,7 @@ Scenario 1 the tectonic lines would appear on the map but the layer control opti
 And scenario 2, the layer control would be visible but it would not generate the tectonic line when the option is selected:
 
 <p align="center">
-<img src="Images\Scenario2.png" width="500px">
+<img src="Images\scenario2.png" width="500px">
 </p>
 
 <p align="center">
