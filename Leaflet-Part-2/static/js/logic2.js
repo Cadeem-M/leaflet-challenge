@@ -98,30 +98,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geo
       "Stadia Map": Stadia_AlidadeSmoothDark
     };
 
-    let tectPlates = d3.json('Leaflet-Part-2/static/js/PB2002_boundaries.json')
-      .then(data => {
-        // Add the tectonic plates GeoJSON layer to the map
-        console.log(data);
-        L.geoJSON(data.features.geometry.coordinates, {
-          style: function (feature) {
-            return {
-
-              color: 'brown', // Customize the color of the tectonic lines
-              weight: 2,    // Set the line weight
-            };
-          }
-         })});
-
-           
-    // Create an overlay object to hold our overlay.
-    let overlayMaps = {
-      Earthquakes: earthquakes,
       
-      TectonicLines: tectPlates
-
-    };
-        
-  
     // Create our map, giving it the topo map and earthquakes layers to display on load.
     let myMap = L.map("map", {
       center: [
@@ -130,6 +107,23 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geo
       zoom: 6,
       layers: [topo, earthquakes]
     });
+
+    
+    let tectonic = L.geoJSON(fetch('Leaflet-Part-2/static/js/PB2002_boundaries.json').json, {
+      style: function (feature) {
+              return {
+                color: 'brown', // Customize the color of the tectonic lines
+                weight: 1,    // Set the line weight
+              };
+    }}).addTo(myMap);
+  
+     
+    // Create an overlay object to hold our overlay.
+   let overlayMaps = {
+    Earthquakes: earthquakes,    
+    TectonicLines: tectonic
+    };
+      
 
 
     

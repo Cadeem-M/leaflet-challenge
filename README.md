@@ -44,22 +44,28 @@ There were a number of roadblocks in this challenge. Many of them relied experim
 Falke Design in a stackoverflow forumn help me realized a documentation era in my code when calling L.marker().
 https://stackoverflow.com/questions/61512240/leaflet-error-this-callinithooks-is-not-a-function-error-- Falke Design
 
-Another challenge I faced was generating tectonic plates in part 2 of the assignment. Using Xpert Learn Assistant, I was directed to https://github.com/fraxen/tectonicplates to download the GeoJson data of the data. Unfortunately even with the XLA providing the code snippet below to generate the lines on my map, I could not get it to run correctly. The provided code:
+Another challenge I faced was generating tectonic plates in part 2 of the assignment. Using Xpert Learn Assistant, I was directed to https://github.com/fraxen/tectonicplates to download the GeoJson data of the data. Unfortunately even with the XLA providing a code snippet to generate the lines on my map, I could not get it to run correctly. With modifications to the code I ended up with two scenarios. 
 
-// Load the tectonic plates GeoJSON data
-fetch('tectonic_plates.geojson')
-  .then(response => response.json())
-  .then(data => {
-    // Add the tectonic plates GeoJSON layer to the map
-    L.geoJSON(data, {
-      style: function (feature) {
-        return {
-          color: 'red', // Customize the color of the tectonic lines
-          weight: 2,    // Set the line weight
-        };
-      }
-    }).addTo(map);
-  });
+Scenario 1 the tectonic lines would appear on the map but the layer control options would dissapear:
+
+<p align="center">
+<img src="Images\Scenario1.png" width="500px">
+</p>
+
+<p align="center">
+<img src="Images\part2_withline.png" width="600px">
+</p>
+
+And scenario 2, the layer control would be visible but it would not generate the tectonic line when the option is selected:
+
+<p align="center">
+<img src="Images\Scenario2.png" width="500px">
+</p>
+
+<p align="center">
+<img src="Images\part2_noline.png" width="600px">
+</p>
+ 
 
 
-Lastly, I also ran into an issue generating the legends for my map. I was not sure how to incorporate the example we did in class into my map exactly how it was done because I had taken a different approach in generating my map up to that point and did not want to undo my efforts just to copy the code did in class. After impovising, I was left with a legend thats interesting in idea but its execution could be improved.
+Lastly, I also ran into an issue generating the legends for my map. I was not sure how to incorporate the example we did in class into my map exactly how it was done because I had taken a different approach in generating my map up to that point and did not want to undo my efforts just to copy the code did in class. After improvising, I was left with a legend thats interesting in idea but its execution could be improved.
