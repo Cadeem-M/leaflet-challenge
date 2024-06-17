@@ -16,19 +16,19 @@ I have been given access to earthquake data that recorded a magnitude of 2.5+ da
 This application will have 2 javascripts that can be ran to generate mapping visualization. By default, logic.js from the folder leaflet-part-1 will be ran and generate its visualizations. 
 
 <p align="center">
-<img src="Images\leaflet_p1.png" width="300px">
+<img src="Images\leaflet_p1.png" width="550px">
 </p>
 
 It will provide a basic topographic map that marks the earthquake locations. However, by commenting out the first script and enabling logic2.js, a second, more detailed map will be generated that allows for the user to alternate between various map visualizations.
 
 <p align="center">
-<img src="Images\leaflet_p2.png" width="300px">
+<img src="Images\leaflet_p2.png" width="550px">
 </p>
 
 The new map that will populate should have options to alternate between a basic Topo map, a USGS topographic map, and a map provided via Stadia. As of June 17th, 2024 I am unabled to incorporate tectonic lines into my code as an additional piece of visualization.
 
 <p align="center">
-<img src="Images\part2_Map.png" width="300px">
+<img src="Images\part2_Map.png" width="600px">
 </p>
 
 
@@ -60,6 +60,6 @@ fetch('tectonic_plates.geojson')
       }
     }).addTo(map);
   });
-  
+
 
 Lastly, I also ran into an issue generating the legends for my map. I was not sure how to incorporate the example we did in class into my map exactly how it was done because I had taken a different approach in generating my map up to that point and did not want to undo my efforts just to copy the code did in class. After impovising, I was left with a legend thats interesting in idea but its execution could be improved.
