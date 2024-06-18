@@ -25,10 +25,10 @@ It will provide a basic topographic map that marks the earthquake locations. How
 <img src="Images\leaflet_p2.png" width="550px">
 </p>
 
-The new map that will populate should have options to alternate between a basic Topo map, a USGS topographic map, and a map provided via Stadia. As of June 17th, 2024 I am unabled to incorporate tectonic lines into my code as an additional piece of visualization.
+The new map that will populate should have options to alternate between a basic Topo map, a USGS topographic map, and a map provided via Stadia. Also, users will have the option to include tectonic plate lines on the map that they choose.
 
 <p align="center">
-<img src="Images\part2_Map.png" width="600px">
+<img src="Images\part2_map_done.png" width="600px">
 </p>
 
 
@@ -67,5 +67,12 @@ And scenario 2, the layer control would be visible but it would not generate the
 </p>
  
 
+ Lastly, I also ran into an issue generating the legends for my map. I was not sure how to incorporate the example we did in class into my map exactly how it was done because I had taken a different approach in generating my map up to that point and did not want to undo my efforts just to copy the code did in class. After improvising, I was left with a legend thats interesting in idea but its execution could be improved.
 
-Lastly, I also ran into an issue generating the legends for my map. I was not sure how to incorporate the example we did in class into my map exactly how it was done because I had taken a different approach in generating my map up to that point and did not want to undo my efforts just to copy the code did in class. After improvising, I was left with a legend thats interesting in idea but its execution could be improved.
+
+## Update
+Managed to get part2 of the challenge to work. thanks to Xpert Learning Assistant, I managed to find the proper documentations and reach the code below. Now my maps are working.
+
+<p align="center">
+<img src="Images\corrected_code.png" width="500px">
+</p>

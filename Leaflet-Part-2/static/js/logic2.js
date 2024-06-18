@@ -10,7 +10,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geo
     // Give each feature a popup that describes the place and magnitude of the earthquake.
     function onEachFeature(feature, layer) {
           
-      let geojsonFeature = {
+      let geojsonFeature = { 
         "type": "Feature",
         "properties": {
             "name": `${feature.properties.place}`,
@@ -97,7 +97,15 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geo
       "USGS Topo Map": USGS_Topo,
       "Stadia Map": Stadia_AlidadeSmoothDark
     };
+    
 
+     // Create an overlay object to hold our overlay.
+   let overlayMaps = {
+    Earthquakes: earthquakes,    
+    "Tectonic Lines": L.layerGroup()
+    };
+
+  
       
     // Create our map, giving it the topo map and earthquakes layers to display on load.
     let myMap = L.map("map", {
@@ -108,22 +116,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geo
       layers: [topo, earthquakes]
     });
 
-    
-    let tectonic = L.geoJSON(fetch('Leaflet-Part-2/static/js/PB2002_boundaries.json').json, {
-      style: function (feature) {
-              return {
-                color: 'brown', // Customize the color of the tectonic lines
-                weight: 1,    // Set the line weight
-              };
-    }}).addTo(myMap);
   
-     
-    // Create an overlay object to hold our overlay.
-   let overlayMaps = {
-    Earthquakes: earthquakes,    
-    TectonicLines: tectonic
-    };
-      
 
 
     
@@ -134,6 +127,28 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geo
       collapsed: false
     }).addTo(myMap);
 
+
+      // Add tectonic layer to the map
+      d3.json('Leaflet-Part-2/static/js/PB2002_boundaries.json').then(data => {
+
+        // Log the loaded data to verify
+        console.log(data);
+      
+        // Create a Leaflet GeoJSON layer
+        let tectonicDataLayer = L.geoJSON(data, {
+              style: function (feature) {
+                return {
+                  color: 'brown', // Customize the color of the tectonic lines
+                  weight: 1,    // Set the line weight
+                };
+              }}
+      );
+      
+        // Add the GeoJSON layer to the overlay group
+        overlayMaps["Tectonic Lines"].addLayer(tectonicDataLayer);
+
+      });
+       
 
        // Create a custom legend control
        let legend = L.control({position: "bottomright"});
