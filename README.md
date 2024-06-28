@@ -8,6 +8,8 @@ The USGS is interested in building a new set of tools that will allow them to vi
 
 I have been given access to earthquake data that recorded a magnitude of 2.5+ data over the last month. With this data, I will be creating a map that marks the earthquake location and provides information regarding it depth and magnitude such as in the image below.
 
+Full access to the app at: https://cadeem-m.github.io/leaflet-challenge/
+
 <p align="center">
 <img src="Images\Map_demo.png" width="700px">
 </p>
