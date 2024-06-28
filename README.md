@@ -72,9 +72,11 @@ And scenario 2, the layer control would be visible but it would not generate the
  Lastly, I also ran into an issue generating the legends for my map. I was not sure how to incorporate the example we did in class into my map exactly how it was done because I had taken a different approach in generating my map up to that point and did not want to undo my efforts just to copy the code did in class. After improvising, I was left with a legend thats interesting in idea but its execution could be improved.
 
 
-## Update
+## Update (June 26, 2024)
 Managed to get part2 of the challenge to work. thanks to Xpert Learning Assistant, I managed to find the proper documentations and reach the code below. Now my maps are working.
 
 <p align="center">
 <img src="Images\corrected_code.png" width="500px">
 </p>
+
+There were issues generating the third map when viewing the app when GitHub hosts it as a url. The Stadia map needed an API access token to be used. Therefore, the map was changed to map canvas provided by Esri.
